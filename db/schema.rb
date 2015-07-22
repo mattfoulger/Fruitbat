@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20150721234102) do
   enable_extension "plpgsql"
 
   create_table "movies", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.string   "director",           limit: 255
+    t.string   "title"
+    t.string   "director"
     t.integer  "runtime_in_minutes"
     t.text     "description"
-    t.string   "poster_image_url",   limit: 255
+    t.string   "poster_image_url"
     t.datetime "release_date"
     t.datetime "created_at"
     t.datetime "updated_at"
