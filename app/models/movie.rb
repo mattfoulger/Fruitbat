@@ -5,9 +5,11 @@ class Movie < ActiveRecord::Base
   validates :director, presence: true
   validates :runtime_in_minutes, numericality: { only_integer: true }
   validates :description, presence: true
-  validates :poster_image_url, presence: true
+  validates :poster, presence: true
   validates :release_date, presence: true
   validate :release_date_is_in_the_future
+
+  mount_uploader :poster, PosterUploader
 
   def review_average
     if reviews.size == 0
