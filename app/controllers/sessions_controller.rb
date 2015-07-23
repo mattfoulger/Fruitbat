@@ -18,4 +18,18 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to movies_path, notice: "Adios!"
   end
+
+  def update
+    if session[:previous_id]
+      session[:user_id] = session[:previous_id]
+      session[:previous_id] = nil
+      redirect_to admin_users_path
+    else
+      session[:previous_id] = session[:user_id]
+      session[:user_id] = params[:id]
+      redirect_to root_path
+    end
+  end
+
+
 end
