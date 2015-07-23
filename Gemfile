@@ -47,3 +47,10 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 # Use for image upload
 gem 'carrierwave'
 gem 'rmagick'
+
+# Use for pagination
+gem 'kaminari'
+
+# Bootstrap it
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'

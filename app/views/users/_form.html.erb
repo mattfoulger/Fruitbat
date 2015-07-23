@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row top-buffer">
+    <div class="col-sm-12">      
+      <%= form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
+        <% if @user.errors.any? %>
+          <div>
+            <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="row field form-group">
+          <%= f.label "email", class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.text_field "email" %>
+          </div>
+        </div>
+        <div class="row field form-group">
+          <%= f.label "firstname", "First Name", class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10"> 
+            <%= f.text_field "firstname" %>
+          </div>
+        </div>
+        <div class="row field form-group">
+          <%= f.label "lastname", "Last Name", class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.text_field "lastname" %>
+          </div>
+        </div>
+        <div class="row field form-group">
+          <%= f.label "password", class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.password_field "password" %>
+          </div>
+        </div>
+        <div class="row field form-group">
+          <%= f.label "password_confirmation", class: 'col-sm-2 control-label' %>
+          <div class="col-sm-10">
+            <%= f.password_field "password_confirmation" %>
+          </div>
+        </div>
+        <div class="row actions form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit "Submit", class: "btn btn-default" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

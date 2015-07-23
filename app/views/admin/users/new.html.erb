@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Admin Panel</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="nav nav-tabs">
+        <li role="presentation"><%= link_to "User List", admin_users_path %></li>
+        <li role="presentation" class="active"><%= link_to "Create User", new_admin_user_path %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
