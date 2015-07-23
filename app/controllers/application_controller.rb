@@ -13,10 +13,14 @@ class ApplicationController < ActionController::Base
   end
 
   def restrict_admin_access
-    if !(current_user.admin == true)
+    unless is_admin?
       flash[:alert] = "You are not an administrator."
       redirect_to root_path
     end
+  end
+
+  def is_admin?
+    current_user.admin == true
   end
 
   def current_user
@@ -25,6 +29,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :restrict_admin_access
+  helper_method :is_admin?
 
 
 end

@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_filter :restrict_admin_access
 
   def index
-    @users = User.all
+    @users = User.page(1).per(10)
   end
 
   def show
@@ -33,6 +33,6 @@ class Admin::UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:email, :firstname, :lastname)
+    params.require(:user).permit(:email, :firstname, :lastname, :admin)
   end
 end

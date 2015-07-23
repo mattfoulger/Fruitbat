@@ -1,6 +1,22 @@
 <h1>Users List</h1>
 <hr>
+
+<table class="table">
+<th>
+  <td>ID</td>
+  <td>First name</td>
+  <td>Last name</td>
+  <td>Admin?</td>
+  <td></td>
+</th>
+  
 <% @users.each do |user| %>
-  <h2><%= link_to user.full_name, edit_admin_user_path(user) %></h2>
-  <hr>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.firstname %></td>
+    <td><%= user.lastname %></td>
+    <td><%= user.admin %></td>
+    <td><%= link_to "Edit", edit_admin_user_path(user) %></td>
+  </tr>
 <% end %>
+</table>
