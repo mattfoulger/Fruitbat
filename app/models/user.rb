@@ -10,5 +10,12 @@ class User < ActiveRecord::Base
     "#{firstname} #{lastname}"
   end
 
+  def role
+    if self.admin
+      "Admin"
+    else
+      "User"
+    end
+  end
 
 end
