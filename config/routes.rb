@@ -9,6 +9,9 @@ RottenMangoes::Application.routes.draw do
   # Non-namespaced routes
 
   resources :movies do
+    collection do
+      get 'search'
+    end
     resources :reviews, only: [:new, :create]
   end
 

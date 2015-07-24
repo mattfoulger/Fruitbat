@@ -1,11 +1,23 @@
-<h1>Movies</h1>
-<%= link_to "Submit a movie!", new_movie_path %>
-<hr>
-<% @movies.each do |movie| %>
-  <%= link_to image_tag(movie.poster_url(:thumb).to_s), movie_path(movie) %>
-  <h2><%= link_to movie.title, movie_path(movie) %> (<%= movie.review_average %>/10</h2>
-  <h3><%= formatted_date(movie.release_date) %></h3>
-  <h4>Diricted by <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %></p>
-  <hr>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Movies</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= render 'movies/submenu' %>
+    </div>
+  </div>
+  <div class="row top-buffer">
+    <%= render 'search' %>
+  </div>
+  <div class="row top-buffer">
+    <%= render @movies %>
+  </div>
+</div>
+
+
+
+
+

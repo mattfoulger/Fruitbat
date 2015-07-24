@@ -1,0 +1,23 @@
+
+  
+  
+  <!-- <p><%= movie.description %></p>
+  <hr> -->
+
+
+<div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4 col-xs-12 bottom-buffer">
+        <%= link_to image_tag(movie.poster_url(:thumb).to_s), movie_path(movie) %>
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <h4 class="no-top-buffer"><%= link_to movie.title, movie_path(movie) %></h4>
+        <span>(<%= movie.review_average %>/10)</span>
+        <p><%= formatted_date(movie.release_date) %></p>
+        <p>Diricted by <%= movie.director %></p>
+        <p><%= movie.runtime_in_minutes %> minutes</p>
+      </div>
+    </div>
+  </div>
+</div>

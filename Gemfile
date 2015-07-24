@@ -43,6 +43,8 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'pry'
+gem 'pry-byebug'
 
 # Use for image upload
 gem 'carrierwave'

@@ -4,6 +4,26 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def search
+    title = "%#{params[:title]}%".downcase
+    director = "%#{params[:director]}%".downcase
+    
+    case params[:duration]
+    when "Any"
+      duration = nil
+    when "Under 90 minutes"
+      duration = "runtime_in_minutes < 90"
+    when "Between 90 and 120 minutes"
+      duration = "runtime_in_minutes BETWEEN 90 AND 120"
+    when "Over 120 minutes"
+      duration = "runtime_in_minutes > 120"
+    end
+
+    @movies = Movie.where("lower(title) LIKE ?", title)
+      .where("lower(director) LIKE ?", director)
+      .where(duration)
+  end
+
   def show
     @movie = Movie.find(params[:id])
   end
