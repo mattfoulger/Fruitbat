@@ -6,15 +6,13 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <%= render 'movies/submenu', view: 'index' %>
+      <%= render 'movies/submenu', view: 'search' %>
     </div>
+  </div>
+  <div class="row top-buffer">
+    <%= render 'search' %>
   </div>
   <div class="row top-buffer" id="content">
     <%= render @movies %>
   </div>
 </div>
-
-
-
-
-

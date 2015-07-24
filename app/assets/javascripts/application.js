@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function () {
+  $("#search-movies-form").on('ajax:success', function(e, data) {
+    $("#content").html(data);
+    event.preventDefault();
+  });
+});

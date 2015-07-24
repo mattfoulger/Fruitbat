@@ -1,0 +1,16 @@
+
+<div class="col-md-4 col-sm-6">
+<div class="media item small-bottom-buffer">
+  <div class="media-left media-top">
+    <%= link_to image_tag(movie.poster_url(:thumb).to_s, class: "media-object"), movie_path(movie) %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to movie.title, movie_path(movie) %></h4>
+    <span>(<%= movie.review_average %>/10)</span>
+    <p><%= formatted_date(movie.release_date) %></p>
+    <p>Diricted by <%= movie.director %></p>
+    <p><%= movie.runtime_in_minutes %> minutes</p>
+    <p><%= movie.description %></p>
+  </div>
+</div>
+</div>
