@@ -15,6 +15,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$color-primary-0: #F76E24;  // Main Primary color */
+$color-primary-1: #FFA777;
+$color-primary-2: #FF8C4E;
+$color-primary-3: #CF4D07;
+$color-primary-4: #A33900;
+
+$color-complement-0: #18A379; // Main Complement color */
+$color-complement-1: #5CC5A5;
+$color-complement-2: #36AE8A;
+$color-complement-3: #048961;
+$color-complement-4: #006C4B;
+
+/* Adjustments to Bootstrap classes */
+a.navbar-brand {
+  padding: 5px;
+}
+
+/* Helper classes */
+
 .top-buffer { margin-top:20px; }
 .small-top-buffer { margin-top:5px; }
 .no-top-buffer { margin-top:0px; }
@@ -22,6 +41,11 @@
 .bottom-buffer { margin-bottom:20px; }
 .small-bottom-buffer { margin-bottom:5px; }
 .no-bottom-buffer { margin-bottom:0px; }
+
+.no-padding { padding:0px; }
+
+
+/* New clases */
 
 .item {
   padding: 5px;
@@ -32,6 +56,6 @@
 }
 
 .under_navbar {
-  background-color: #fecc5b;
+  background-color: #f9dfab;
   padding: 5px;
 }
