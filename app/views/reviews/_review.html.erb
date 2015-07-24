@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-8 col-md-10">
+    <div class="media item small-bottom-buffer">
+      <div class="media-left media-top">
+        <%= link_to image_tag(review.movie.poster_url(:thumb).to_s, class: "media-object"), movie_path(review.movie) %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to review.movie.title, movie_path(review.movie) %></h4>
+        <p><%= review.rating_out_of_ten %>/10</p>
+        <p><%= review.text %></p>
+      </div>
+    </div>
+  </div>
+</div>
