@@ -4,11 +4,12 @@ RottenMangoes::Application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :movies
   end
 
   # Non-namespaced routes
 
-  resources :movies do
+  resources :movies, only: [:show, :index] do
     collection do
       get 'search'
       get 'highest_rated'

@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
       redirect_to admin_users_path
     else
       session[:previous_id] = session[:user_id]
-      session[:user_id] = params[:id]
+      session[:user_id] = params[:format]
       redirect_to root_path
     end
   end
