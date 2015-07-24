@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><%= link_to "Highest Rated", movies_path %></li>
-  <li role="presentation"><%= link_to "New Releases", movies_path %></li>
-  <li role="presentation"><%= link_to "Search", movies_path %></li>
+  <li role="presentation" <% if view =="index" %> class="active" <% end %> ><%= link_to "All movies", movies_path %></li>
+  <li role="presentation" <% if view =="highest_rated" %> class="active" <% end %> ><%= link_to "Highest rated", highest_rated_movies_path %></li>
+  <li role="presentation" <% if view =="search" %> class="active" <% end %> ><%= link_to "Search", search_movies_path %></li>
 </ul>

@@ -15,6 +15,7 @@ class Movie < ActiveRecord::Base
   scope :short, -> { where("runtime_in_minutes < 90") }
   scope :medium, -> { where("runtime_in_minutes BETWEEN 90 AND 120") }
   scope :long, -> { where("runtime_in_minutes > 120") }
+  scope :highest_rated, -> { joins(:reviews).order("AVG(reviews.rating_out_of_ten) DESC").group("movies.id").having("AVG(reviews.rating_out_of_ten) > 5") }
 
   # def self.search(params)
   #   @movies = Movie.all
@@ -42,10 +43,6 @@ class Movie < ActiveRecord::Base
   end
 
   protected
-
-  def duration(scope)
-    send(scope)
-  end
 
   def release_date_is_in_the_future
     if release_date.present?

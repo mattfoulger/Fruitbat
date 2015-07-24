@@ -8,7 +8,7 @@
       </div>
       <div class = "form-group">
         <%= label_tag :duration, "Duration:", class: "control-label" %>
-        <%= select_tag "duration", "<option value='' selected='selected'>Any</option><option value='short'>Under 90 minutes</option><option value='medium'>Between 90 and 120 minutes</option><option value='long'>Over 120 minutes</option>", {class: "form-control"} %>
+        <%= select_tag "duration", "<option value='all' selected='selected'>Any</option><option value='short'>Under 90 minutes</option><option value='medium'>Between 90 and 120 minutes</option><option value='long'>Over 120 minutes</option>".html_safe, {class: "form-control"} %>
       </div>
         <%= submit_tag "Search", class: "btn btn-default" %> 
     <% end %>

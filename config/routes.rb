@@ -11,6 +11,8 @@ RottenMangoes::Application.routes.draw do
   resources :movies do
     collection do
       get 'search'
+      get 'highest_rated'
+      get 'new_releases'
     end
     resources :reviews, only: [:new, :create]
   end

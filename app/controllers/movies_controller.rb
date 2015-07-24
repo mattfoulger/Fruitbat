@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
 
   def search
     @movies = Movie.query(params[:query])
-    case [params[:duration]]
+    case params[:duration]
     when "short"
       @movies = @movies.short
     when "medium"
@@ -15,9 +15,12 @@ class MoviesController < ApplicationController
     when "long"
       @movies = @movies.long
     end
+    @movies
   end
 
-
+  def highest_rated
+    @movies = Movie.highest_rated
+  end
 
   def show
     @movie = Movie.find(params[:id])
