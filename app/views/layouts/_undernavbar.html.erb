@@ -1,9 +1,7 @@
 <% if impersonating? %>
-<div class="container">
-  <div class="row">
+  <div class="row under_navbar">
     <div class="col-sm-12">  
-      Impersonating <%= current_user.full_name %>. <%= link_to "Switch back to admin", session_path(current_user), method: :patch %>
+      <span>Impersonating <%= current_user.full_name %>. <%= link_to "Switch back to admin account", session_path(current_user), method: :patch %></span>
     </div>
   </div>
-</div>
 <% end %>
