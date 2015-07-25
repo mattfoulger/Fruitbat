@@ -1,0 +1,20 @@
+<div class="container">
+  <%= render 'admin/submenu', view:"movies" %>
+  <div class="row top-buffer">
+    <div class="col-sm-12">
+      <table class="table table-hover">
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Role</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <%= render @movies %>
+      </table>
+    </div>
+  </div>
+</div>

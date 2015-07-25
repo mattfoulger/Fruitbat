@@ -1,4 +1,8 @@
-<%= link_to "Back to all movies", movies_path %>
-
-<h2>Submit a movie!</h2>
-<%= render 'form' %>
+<div class="container">
+  <%= render 'admin/submenu', view:"new_movie" %>
+  <div class="row top-buffer">
+    <div class="col-sm-8">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
